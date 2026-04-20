@@ -17,10 +17,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * 评论相关接口 Controller
- * 路径前缀: /api/comment/*
- */
+//评论接口, 路径/api/comment/*
 @WebServlet("/api/comment/*")
 public class CommentController extends HttpServlet {
 
@@ -86,10 +83,8 @@ public class CommentController extends HttpServlet {
         }
     }
 
-    /**
-     * 获取某个视频的所有评论
-     * GET /api/comment/video/{videoId}
-     */
+     //获取某个视频的所有评论
+     //GET /api/comment/video/{videoId}
     private void handleGetCommentsByVideo(String videoIdStr, HttpServletResponse resp) throws IOException {
         try {
             Long videoId = Long.parseLong(videoIdStr);
@@ -100,13 +95,12 @@ public class CommentController extends HttpServlet {
             JsonUtil.writeJson(resp, Result.error(400, "无效的视频ID"));
         }
     }
+    
+     //添加评论
+     //POST /api/comment/add
+     //Body: { "videoId":123, "content":"...", "parentId":null }
+     // 需要登录，userId 从 request 属性获取
 
-    /**
-     * 添加评论
-     * POST /api/comment/add
-     * Body: { "videoId":123, "content":"...", "parentId":null }
-     * 需要登录，userId 从 request 属性获取
-     */
     private void handleAddComment(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long userId = (Long) req.getAttribute("userId");
         if (userId == null) {

@@ -9,7 +9,7 @@ public class PasswordUtil {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     /**
-     * 生成随机盐（16字节 Base64 编码）
+     * 生成随机盐（Base64 编码）
      */
     public static String generateSalt() {
         byte[] salt = new byte[16];

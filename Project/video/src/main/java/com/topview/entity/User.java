@@ -17,7 +17,7 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
 
-    // 无参构造（必须，反射需要）
+    // 无参构造（反射需要）
     public User() {}
 
     // 用于注册的便捷构造

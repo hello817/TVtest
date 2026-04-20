@@ -11,10 +11,7 @@ import java.util.List;
  */
 public class UserDAO extends BaseDAO<User> {
 
-    /**
-     * 插入新用户
-     * 注意：密码哈希和盐值已在 Service 层生成，这里直接保存
-     */
+    //插入新用户,注意密码哈希和盐值已在 Service 层生成，这里直接保存
     public int insert(User user) {
         String sql = "INSERT INTO user (username, password_hash, salt, nickname, avatar, role) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
@@ -28,25 +25,19 @@ public class UserDAO extends BaseDAO<User> {
         );
     }
 
-    /**
-     * 根据用户名查询用户（用于登录和注册查重）
-     */
+    //根据用户名查询用户（用于登录和注册查重）
     public User findByUsername(String username) {
         String sql = "SELECT * FROM user WHERE username = ?";
         return queryOne(sql, username);
     }
 
-    /**
-     * 根据用户ID查询
-     */
+    //根据用户ID查询
     public User findById(Long id) {
         String sql = "SELECT * FROM user WHERE id = ?";
         return queryOne(sql, id);
     }
 
-    /**
-     * 更新用户信息（可扩展）
-     */
+    //更新用户信息
     public int updateUser(User user) {
         String sql = "UPDATE user SET nickname = ?, avatar = ?, role = ? WHERE id = ?";
         return update(sql,
@@ -57,9 +48,7 @@ public class UserDAO extends BaseDAO<User> {
         );
     }
 
-    /**
-     * 查询所有用户（管理员功能，可暂不使用）
-     */
+    //查询所有用户（管理员
     public List<User> findAll() {
         String sql = "SELECT * FROM user";
         return queryList(sql);

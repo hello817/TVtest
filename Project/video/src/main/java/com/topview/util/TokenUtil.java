@@ -36,9 +36,7 @@ public class TokenUtil {
         return info.userId;
     }
 
-    /**
-     * 刷新 Token：若剩余有效时间小于5分钟，则生成新 Token
-     */
+    //刷新 Token：若剩余有效时间小于5分钟，则生成新 Token
     public static String refreshTokenIfNeeded(String oldToken) {
         TokenInfo info = tokenStore.get(oldToken);
         if (info == null) return null;

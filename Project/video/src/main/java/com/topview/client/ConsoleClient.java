@@ -20,10 +20,10 @@ import java.util.Scanner;
  */
 public class ConsoleClient {
 
-    private static final String BASE_URL = "http://localhost:8802/StoneVideo/api"; // 根据你的部署修改
+    private static final String BASE_URL = "http://localhost:8802/StoneVideo/api"; //基础地址
     private static final Gson gson = new Gson();
     private static String authToken = null;      // 登录后保存 Token
-    private static Long currentUserId = null;    // 当前登录用户 ID（可选）
+    private static Long currentUserId = null;    // 当前登录用户 ID
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {

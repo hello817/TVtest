@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+//大致流程 接收请求 ->调用 Service -> 返回 JSON 响应
 @WebServlet("/api/user/*")
 public class UserController extends HttpServlet {
     private final UserService userService = new UserService();

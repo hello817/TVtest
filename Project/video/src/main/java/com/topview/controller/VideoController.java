@@ -19,14 +19,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 视频相关接口 Controller
+ * 视频相关接口
  * 路径前缀: /api/video/*
- * 遵循 MVC 结构：接收请求 → 调用 Service → 返回 JSON 响应
  */
 @WebServlet("/api/video/*")
 public class VideoController extends HttpServlet {
 
-    private static final Logger logger = LoggerUtil.getLogger(VideoServlet.class.getName());
+    private static final Logger logger = LoggerUtil.getLogger(VideoController.class.getName());
     private final VideoService videoService = new VideoService();
 
     @Override
